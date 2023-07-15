@@ -1,0 +1,50 @@
+<!-- <form  class="form-field" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of formSettings.fields">
+      <div  class="form-element">
+        <label>{{ field.title }}</label>
+        <input [formControlName]="field.slug" [type]="field.type" [placeholder]="field.placeholder" [value]="field.title"/>
+        <div *ngIf="form.get(field.slug).invalid && form.get(field.slug).touched" class="error-message">
+          <div *ngIf="form.get(field.slug).errors.required">This field is required.</div>
+        </div>
+
+        <div *ngIf="form.get(field.slug).invalid && form.get(field.slug).touched" class="error-message">
+            <div *ngIf="form.get(field.slug).errors.required">This field is required.</div>
+          </div>
+          
+      </div>
+    </div>
+    <button type="submit" (click)="onSubmit">Submit</button>
+  </form> -->
+<div class="container">
+  <div class="container" *ngFor="let item of formArrow">
+
+    <!-- {{item}} -->
+    <!-- <div></div>
+    {{console.log('temp -',item)}}
+    {{console.log('temp +',formItem)}} -->
+
+    <form  class="form-field" [formGroup]="formItem" (ngSubmit)="onSubmit()">
+      <div *ngFor="let field of formSettings.fields">
+        <div  class="form-element">
+          <label>{{ field.title }}</label>
+          <input [formControlName]="field.slug" [type]="field.type" [placeholder]="field.placeholder" [value]="field.title"/>
+          <div *ngIf="form.get(field.slug).invalid && form.get(field.slug).touched" class="error-message">
+            <div *ngIf="form.get(field.slug).errors.required">This field is required.</div>
+          </div>
+  
+          <div *ngIf="form.get(field.slug).invalid && form.get(field.slug).touched" class="error-message">
+              <div *ngIf="form.get(field.slug).errors.required">This field is required.</div>
+            </div>
+            
+        </div>
+      </div>
+      <button type="submit" (click)="onSubmit">Отправить</button>
+    </form>
+    <button (click)="DeleteItem()">Удалить</button>
+    
+</div>
+<button (click)="addItem()">Добавить</button>
+
+</div>
+  
+  
